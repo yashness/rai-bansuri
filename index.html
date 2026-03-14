@@ -8,7 +8,7 @@
   <meta property="og:title" content="Rai Bansuri — Handcrafted Indian Bamboo Flutes by Gaurab">
   <meta property="og:description" content="Every bansuri is personal. Crafting yours starts with a conversation. Handcrafted by Gaurab in India.">
   <meta property="og:image" content="assets/images/og-image.jpg">
-  <meta property="og:url" content="https://ryebansuri.in">
+  <meta property="og:url" content="https://raibansuri.in">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -140,7 +140,7 @@
     .craft-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
     .craft-step h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
     .craft-step p { font-size: 0.85rem; line-height: 1.6; color: var(--bamboo-pale); font-weight: 300; }
-    .craft-num { font-family: var(--font-display); font-size: 0.7rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 16px; }
+    .craft-num { font-family: var(--font-display); font-size: clamp(0.9rem, 1vw, 1rem); color: var(--gold); letter-spacing: 0.12em; margin-bottom: 16px; }
 
     /* Collection */
     .collection { padding: 120px 0; background: var(--cream); }
@@ -216,14 +216,27 @@
       .nav-links.open a { color: var(--text-secondary) !important; }
     }
     @media (max-width: 640px) {
+      .container { padding: 0 18px; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .story, .craft, .collection, .quote-section, .contact { padding-top: 80px; padding-bottom: 80px; }
       .hero-content { padding-top: 120px; }
       .hero-title { font-size: 2.2rem; }
+      .hero-sub-links { flex-direction: column; gap: 12px; }
       .hero-phone { font-size: 0.95rem; padding: 14px 28px; }
       .craft-steps { grid-template-columns: 1fr; }
+      .craft-step { padding: 32px 20px; }
+      .craft-icon { width: 64px; height: 64px; margin-bottom: 16px; }
+      .craft-icon svg { width: 28px; height: 28px; }
+      .craft-num { font-size: 1.15rem; letter-spacing: 0.16em; }
       .products-grid { grid-template-columns: 1fr; }
+      .product-image { min-height: 220px; padding: 28px 24px; }
+      .product-info { padding: 24px 20px 28px; }
+      .product-meta { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .btn-call { width: 100%; justify-content: center; }
       .contact-phone-big { font-size: 1.1rem; padding: 16px 32px; }
+      .contact-note { padding: 20px 22px; }
       .contact-extras { flex-direction: column; align-items: center; gap: 16px; }
-      .story-stats { gap: 24px; }
+      .story-stats { gap: 24px; flex-wrap: wrap; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
 
@@ -406,7 +419,7 @@
             <div class="product-scale">Key of E &#x2022; Bass &#x2022; 30"</div>
             <p class="product-desc"><span data-lang-en>Rich, deep tones ideal for classical ragas and meditative playing. Our flagship concert-grade Bansuri.</span><span data-lang-hi>&#x0936;&#x093E;&#x0938;&#x094D;&#x0924;&#x094D;&#x0930;&#x0940;&#x092F; &#x0930;&#x093E;&#x0917;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0917;&#x0939;&#x0930;&#x0947;, &#x0938;&#x092E;&#x0943;&#x0926;&#x094D;&#x0927; &#x0938;&#x094D;&#x0935;&#x0930;&#x0964; &#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x092A;&#x094D;&#x0930;&#x092E;&#x0941;&#x0916; &#x0915;&#x0949;&#x0928;&#x094D;&#x0938;&#x0930;&#x094D;&#x091F;-&#x0917;&#x094D;&#x0930;&#x0947;&#x0921; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">&#x20B9;3,500 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <div class="product-price">&#x20B9;2,799 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
               <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
@@ -420,7 +433,7 @@
             <div class="product-scale">Key of G &#x2022; Medium &#x2022; 23"</div>
             <p class="product-desc"><span data-lang-en>Versatile and expressive. Perfect for both beginners and seasoned players seeking a warm, clear voice.</span><span data-lang-hi>&#x092C;&#x0939;&#x0941;&#x092E;&#x0941;&#x0916;&#x0940; &#x0914;&#x0930; &#x092D;&#x093E;&#x0935;&#x092A;&#x0942;&#x0930;&#x094D;&#x0923;&#x0964; &#x0936;&#x0941;&#x0930;&#x0941;&#x0906;&#x0924;&#x0940; &#x0914;&#x0930; &#x0905;&#x0928;&#x0941;&#x092D;&#x0935;&#x0940; &#x0926;&#x094B;&#x0928;&#x094B;&#x0902; &#x0935;&#x093E;&#x0926;&#x0915;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">&#x20B9;2,500 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <div class="product-price">&#x20B9;2,199 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
               <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
@@ -435,7 +448,7 @@
             <div class="product-scale">Key of C &#x2022; Treble &#x2022; 17"</div>
             <p class="product-desc"><span data-lang-en>Bright and lively. Ideal for folk melodies, light classical, and students beginning their Bansuri journey.</span><span data-lang-hi>&#x0909;&#x091C;&#x094D;&#x091C;&#x094D;&#x0935;&#x0932; &#x0914;&#x0930; &#x091C;&#x0940;&#x0935;&#x0902;&#x0924;&#x0964; &#x0932;&#x094B;&#x0915; &#x0927;&#x0941;&#x0928;&#x094B;&#x0902; &#x0914;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092F;&#x093E;&#x0924;&#x094D;&#x0930;&#x093E; &#x0936;&#x0941;&#x0930;&#x0942; &#x0915;&#x0930;&#x0928;&#x0947; &#x0935;&#x093E;&#x0932;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">&#x20B9;1,800 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <div class="product-price">&#x20B9;1,799 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
               <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
@@ -489,7 +502,7 @@
         <div class="contact-extras reveal reveal-delay-4">
           <div class="contact-extra">
             <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <a href="mailto:hello@ryebansuri.in">hello@ryebansuri.in</a>
+            <a href="mailto:hello@raibansuri.in">hello@raibansuri.in</a>
           </div>
           <div class="contact-extra">
             <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -524,7 +537,7 @@
           <h4><span data-lang-en>Connect</span><span data-lang-hi>&#x091C;&#x0941;&#x0921;&#x093C;&#x0947;&#x0902;</span></h4>
           <ul class="footer-links">
             <li><a href="tel:+919535519506">+91 95355 19506</a></li>
-            <li><a href="mailto:hello@ryebansuri.in">hello@ryebansuri.in</a></li>
+            <li><a href="mailto:hello@raibansuri.in">hello@raibansuri.in</a></li>
             <li><a href="https://instagram.com/raibansuri" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://youtube.com/@raibansuri" target="_blank" rel="noopener">YouTube</a></li>
           </ul>
@@ -532,7 +545,7 @@
       </div>
       <div class="footer-bottom">
         <span>&#x00A9; 2026 Rai Bansuri by Gaurab. <span data-lang-en>Handcrafted with</span><span data-lang-hi>&#x092A;&#x094D;&#x0930;&#x0947;&#x092E; &#x0938;&#x0947; &#x092C;&#x0928;&#x0940;</span> &#x2665; <span data-lang-en>in India.</span><span data-lang-hi>&#x092D;&#x093E;&#x0930;&#x0924; &#x092E;&#x0947;&#x0902;&#x0964;</span></span>
-        <span><a href="https://ryebansuri.in">ryebansuri.in</a></span>
+        <span><a href="https://raibansuri.in">raibansuri.in</a></span>
       </div>
     </div>
   </footer>
