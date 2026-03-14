@@ -3,989 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rai Bansuri — Handcrafted Indian Bamboo Flutes</title>
-  <meta name="description" content="Rai Bansuri — Premium handcrafted Indian bamboo flutes (Bansuri) by Gaurab. Crafted with tradition, tuned with precision. Made in India.">
-  <meta property="og:title" content="Rai Bansuri — Handcrafted Indian Bamboo Flutes">
-  <meta property="og:description" content="Premium handcrafted Indian bamboo flutes by Gaurab. Crafted with tradition, tuned with precision.">
+  <title>Rai Bansuri — Handcrafted Indian Bamboo Flutes by Gaurab</title>
+  <meta name="description" content="Rai Bansuri by Gaurab — Premium handcrafted Indian bamboo flutes. Every bansuri is personal. Crafting yours starts with a conversation. Made in India.">
+  <meta property="og:title" content="Rai Bansuri — Handcrafted Indian Bamboo Flutes by Gaurab">
+  <meta property="og:description" content="Every bansuri is personal. Crafting yours starts with a conversation. Handcrafted by Gaurab in India.">
   <meta property="og:image" content="assets/images/og-image.jpg">
   <meta property="og:url" content="https://ryebansuri.in">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ═══════════════════════════════════════════
-       RAI BANSURI — Design System
-       Colors drawn from bamboo, earth & gold
-    ═══════════════════════════════════════════ */
     :root {
-      --bamboo-deep:    #2C1F16;
-      --bamboo-dark:    #5C3D2E;
-      --bamboo-warm:    #8B5E3C;
-      --bamboo-light:   #C9956B;
-      --bamboo-pale:    #E8D5B7;
-      --cream:          #FDF6EC;
-      --cream-dark:     #F5EBD9;
-      --gold:           #C8A44E;
-      --gold-light:     #E2C97A;
-      --forest:         #2D4A3E;
-      --forest-light:   #3D6B5A;
-      --text-primary:   #2C1F16;
-      --text-secondary: #6B5744;
-      --text-light:     #9B8B7A;
-      --white:          #FFFFFF;
-
+      --bamboo-deep: #2C1F16; --bamboo-dark: #5C3D2E; --bamboo-warm: #8B5E3C;
+      --bamboo-light: #C9956B; --bamboo-pale: #E8D5B7;
+      --cream: #FDF6EC; --cream-dark: #F5EBD9;
+      --gold: #C8A44E; --gold-light: #E2C97A;
+      --forest: #2D4A3E; --forest-light: #3D6B5A;
+      --text-primary: #2C1F16; --text-secondary: #6B5744; --text-light: #9B8B7A;
+      --white: #FFFFFF;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', -apple-system, sans-serif;
-
+      --font-hindi: 'Noto Sans Devanagari', sans-serif;
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
     }
-
-    /* ═══ Reset ═══ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body {
-      font-family: var(--font-body);
-      color: var(--text-primary);
-      background: var(--cream);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
+    body { font-family: var(--font-body); color: var(--text-primary); background: var(--cream); overflow-x: hidden; line-height: 1.6; }
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
     button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-    /* ═══ Utility ═══ */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
-    /* ═══ Reveal Animation Classes ═══ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* Language toggle */
+    [data-lang-hi] { display: none; }
+    body.lang-hi [data-lang-hi] { display: inline; }
+    body.lang-hi [data-lang-en] { display: none; }
+    body.lang-hi [data-lang-hi-block] { display: block; }
+    body.lang-hi [data-lang-en-block] { display: none; }
+    [data-lang-hi-block] { display: none; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
-    /* ═══ Navigation ═══ */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 20px 0;
-      transition: all 0.4s var(--ease-out-quart);
-    }
-    .nav.scrolled {
-      background: rgba(253, 246, 236, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      padding: 12px 0;
-      box-shadow: 0 1px 0 rgba(44, 31, 22, 0.08);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 16px 0; transition: all 0.4s var(--ease-out-quart); background: linear-gradient(to bottom, rgba(44,31,22,0.7) 0%, transparent 100%); }
+    .nav.scrolled { background: rgba(253,246,236,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); padding: 10px 0; box-shadow: 0 1px 0 rgba(44,31,22,0.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
     .nav-logo svg { height: 36px; width: auto; }
-    .nav-brand {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--bamboo-deep);
-      letter-spacing: 0.02em;
-    }
-    .nav-brand span {
-      display: block;
-      font-family: var(--font-body);
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-top: -2px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      letter-spacing: 0.03em;
-      transition: color 0.3s;
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      background: var(--gold);
-      transition: width 0.3s var(--ease-out-expo);
-    }
-    .nav-links a:hover { color: var(--bamboo-deep); }
+    .nav-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--white); letter-spacing: 0.02em; transition: color 0.4s; }
+    .nav.scrolled .nav-brand { color: var(--bamboo-deep); }
+    .nav-brand span { display: block; font-family: var(--font-body); font-size: 0.6rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: -2px; transition: color 0.4s; }
+    .nav.scrolled .nav-brand span { color: var(--text-light); }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.85); letter-spacing: 0.03em; transition: color 0.3s; position: relative; }
+    .nav.scrolled .nav-links a { color: var(--text-secondary); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1.5px; background: var(--gold); transition: width 0.3s var(--ease-out-expo); }
+    .nav-links a:hover { color: var(--white); }
+    .nav.scrolled .nav-links a:hover { color: var(--bamboo-deep); }
     .nav-links a:hover::after { width: 100%; }
+    .lang-toggle { display: flex; border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.3); transition: border-color 0.4s; }
+    .nav.scrolled .lang-toggle { border-color: var(--cream-dark); }
+    .lang-toggle button { padding: 5px 12px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; color: rgba(255,255,255,0.7); transition: all 0.3s; border-radius: 0; }
+    .nav.scrolled .lang-toggle button { color: var(--text-light); }
+    .lang-toggle button.active { background: var(--gold); color: var(--bamboo-deep); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+    .nav.scrolled .nav-toggle span { background: var(--bamboo-deep); }
+    .logo-circle { stroke: var(--gold); } .logo-body { stroke: var(--white); transition: stroke 0.4s; } .logo-dots { fill: var(--gold); } .logo-base { stroke: var(--white); transition: stroke 0.4s; }
+    .nav.scrolled .logo-body { stroke: var(--bamboo-deep); } .nav.scrolled .logo-base { stroke: var(--bamboo-deep); }
 
-    /* Mobile nav toggle */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 4px;
-    }
-    .nav-toggle span {
-      width: 24px;
-      height: 2px;
-      background: var(--bamboo-deep);
-      transition: all 0.3s;
-    }
+    /* Hero */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: var(--bamboo-deep); text-align: center; }
+    .hero-bg { position: absolute; inset: 0; opacity: 0.45; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(44,31,22,0.5) 0%, rgba(44,31,22,0.35) 50%, rgba(44,31,22,0.7) 100%); }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; padding: 140px 24px 100px; color: var(--cream); }
+    .hero-tagline { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 24px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+    .hero-tagline::before, .hero-tagline::after { content: ''; width: 40px; height: 1px; background: var(--gold); }
+    .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 700; line-height: 1.15; margin-bottom: 28px; color: var(--white); }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-philosophy { font-size: 1.15rem; line-height: 1.8; color: var(--bamboo-pale); margin-bottom: 12px; font-weight: 300; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .hero-philosophy-hi { font-family: var(--font-hindi); font-size: 1.1rem; color: var(--gold-light); margin-bottom: 40px; font-weight: 400; opacity: 0.9; }
+    body.lang-hi .hero-philosophy-hi { font-size: 1.2rem; }
+    .hero-cta-group { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .hero-phone { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: var(--bamboo-deep); padding: 16px 36px; border-radius: 50px; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.03em; transition: all 0.3s var(--ease-out-quart); }
+    .hero-phone:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(200,164,78,0.35); }
+    .hero-phone svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hero-sub-links { display: flex; gap: 24px; margin-top: 8px; }
+    .hero-sub-links a { font-size: 0.85rem; color: rgba(232,213,183,0.7); border-bottom: 1px solid rgba(232,213,183,0.3); padding-bottom: 2px; transition: all 0.3s; }
+    .hero-sub-links a:hover { color: var(--gold-light); border-color: var(--gold); }
+    .scroll-hint { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--bamboo-pale); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5; animation: fadeInUp 1s 1.5s both; }
+    .scroll-line { width: 1px; height: 32px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(20px); } to { opacity: 0.5; transform: translateX(-50%) translateY(0); } }
 
-    /* ═══ HERO ═══ */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--bamboo-deep) 0%, #3D2A1E 50%, var(--bamboo-dark) 100%);
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      opacity: 0.35;
-    }
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(44, 31, 22, 0.85) 0%,
-        rgba(44, 31, 22, 0.6) 40%,
-        rgba(44, 31, 22, 0.4) 100%
-      );
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 120px 24px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 60px;
-    }
-    .hero-text { color: var(--cream); }
-    .hero-tagline {
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .hero-tagline::before {
-      content: '';
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 24px;
-      color: var(--white);
-    }
-    .hero-title em {
-      font-style: italic;
-      color: var(--gold-light);
-    }
-    .hero-desc {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: var(--bamboo-pale);
-      margin-bottom: 40px;
-      max-width: 480px;
-      font-weight: 300;
-    }
-    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-flute {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-flute-img {
-      max-height: 500px;
-      width: auto;
-      filter: drop-shadow(0 20px 60px rgba(0,0,0,0.4));
-      animation: floatFlute 6s ease-in-out infinite;
-    }
-    @keyframes floatFlute {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      50% { transform: translateY(-15px) rotate(0deg); }
-    }
-    .hero-glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(200, 164, 78, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      animation: pulseGlow 4s ease-in-out infinite;
-    }
-    @keyframes pulseGlow {
-      0%, 100% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.2); opacity: 1; }
-    }
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; border-radius: 4px; transition: all 0.3s var(--ease-out-quart); }
+    .btn-primary { background: var(--gold); color: var(--bamboo-deep); }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,164,78,0.3); }
 
-    /* Scroll indicator */
-    .scroll-hint {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--bamboo-pale);
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.6;
-      animation: fadeInUp 1s 1.5s both;
-    }
-    .scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--gold), transparent);
-      animation: scrollLine 2s ease-in-out infinite;
-    }
-    @keyframes scrollLine {
-      0% { transform: scaleY(0); transform-origin: top; }
-      50% { transform: scaleY(1); transform-origin: top; }
-      51% { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-      to { opacity: 0.6; transform: translateX(-50%) translateY(0); }
-    }
+    /* Story */
+    .story { padding: 120px 0; background: var(--cream); }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .story-image { position: relative; border-radius: 8px; overflow: hidden; }
+    .story-image img { border-radius: 8px; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .story-image::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(200,164,78,0.2); border-radius: 8px; pointer-events: none; }
+    .story-accent { position: absolute; top: -20px; left: -20px; width: 80px; height: 80px; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); opacity: 0.5; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+    .section-label::before { content: ''; width: 30px; height: 1.5px; background: var(--gold); }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600; line-height: 1.2; margin-bottom: 24px; color: var(--bamboo-deep); }
+    .section-title em { font-style: italic; color: var(--bamboo-warm); }
+    .story-text p { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; font-weight: 300; }
+    .story-stats { display: flex; gap: 40px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--cream-dark); }
+    .stat-number { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--bamboo-deep); }
+    .stat-label { font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.05em; margin-top: 4px; }
 
-    /* ═══ Buttons ═══ */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 32px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      transition: all 0.3s var(--ease-out-quart);
-    }
-    .btn-primary {
-      background: var(--gold);
-      color: var(--bamboo-deep);
-    }
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(200, 164, 78, 0.3);
-    }
-    .btn-outline {
-      border: 1.5px solid rgba(232, 213, 183, 0.4);
-      color: var(--cream);
-    }
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-      transform: translateY(-2px);
-    }
-    .btn-dark {
-      background: var(--bamboo-deep);
-      color: var(--cream);
-    }
-    .btn-dark:hover {
-      background: var(--bamboo-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(44, 31, 22, 0.3);
-    }
-
-    /* ═══ ABOUT / STORY ═══ */
-    .story {
-      padding: 120px 0;
-      background: var(--cream);
-      position: relative;
-    }
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .story-image {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .story-image img {
-      border-radius: 8px;
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-    }
-    .story-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(200, 164, 78, 0.2);
-      border-radius: 8px;
-      pointer-events: none;
-    }
-    .story-accent {
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      width: 80px;
-      height: 80px;
-      border-top: 2px solid var(--gold);
-      border-left: 2px solid var(--gold);
-      opacity: 0.5;
-    }
-    .section-label {
-      font-family: var(--font-body);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-label::before {
-      content: '';
-      width: 30px;
-      height: 1.5px;
-      background: var(--gold);
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: 24px;
-      color: var(--bamboo-deep);
-    }
-    .section-title em {
-      font-style: italic;
-      color: var(--bamboo-warm);
-    }
-    .story-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      font-weight: 300;
-    }
-    .story-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 40px;
-      padding-top: 32px;
-      border-top: 1px solid var(--cream-dark);
-    }
-    .stat-item {}
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--bamboo-deep);
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      letter-spacing: 0.05em;
-      margin-top: 4px;
-    }
-
-    /* ═══ CRAFT PROCESS ═══ */
-    .craft {
-      padding: 100px 0;
-      background: var(--bamboo-deep);
-      color: var(--cream);
-      position: relative;
-      overflow: hidden;
-    }
-    .craft::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 40%;
-      height: 100%;
-      background: radial-gradient(ellipse at right, rgba(200, 164, 78, 0.05) 0%, transparent 60%);
-    }
+    /* Craft */
+    .craft { padding: 100px 0; background: var(--bamboo-deep); color: var(--cream); position: relative; overflow: hidden; }
+    .craft::before { content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: radial-gradient(ellipse at right, rgba(200,164,78,0.05) 0%, transparent 60%); }
     .craft .section-title { color: var(--cream); }
-    .craft-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      margin-top: 60px;
-    }
-    .craft-step {
-      text-align: center;
-      padding: 40px 24px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all 0.4s var(--ease-out-quart);
-    }
-    .craft-step:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(200, 164, 78, 0.2);
-      transform: translateY(-4px);
-    }
-    .craft-icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(200, 164, 78, 0.1);
-      border: 1px solid rgba(200, 164, 78, 0.2);
-    }
-    .craft-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--gold);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .craft-step h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--white);
-    }
-    .craft-step p {
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: var(--bamboo-pale);
-      font-weight: 300;
-    }
-    .craft-num {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-    }
+    .craft-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 60px; }
+    .craft-step { text-align: center; padding: 40px 24px; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s var(--ease-out-quart); }
+    .craft-step:hover { background: rgba(255,255,255,0.06); border-color: rgba(200,164,78,0.2); transform: translateY(-4px); }
+    .craft-icon { width: 56px; height: 56px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(200,164,78,0.1); border: 1px solid rgba(200,164,78,0.2); }
+    .craft-icon svg { width: 24px; height: 24px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .craft-step h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; color: var(--white); }
+    .craft-step p { font-size: 0.85rem; line-height: 1.6; color: var(--bamboo-pale); font-weight: 300; }
+    .craft-num { font-family: var(--font-display); font-size: 0.7rem; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 16px; }
 
-    /* ═══ COLLECTION / PRODUCTS ═══ */
-    .collection {
-      padding: 120px 0;
-      background: var(--cream);
-    }
-    .collection-header {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto 64px;
-    }
-    .collection-header p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      font-weight: 300;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .product-card {
-      border-radius: 12px;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid rgba(44, 31, 22, 0.06);
-      transition: all 0.4s var(--ease-out-quart);
-    }
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(44, 31, 22, 0.1);
-      border-color: rgba(200, 164, 78, 0.2);
-    }
-    .product-image {
-      position: relative;
-      background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
-      padding: 40px 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 280px;
-      overflow: hidden;
-    }
-    .product-image img {
-      max-height: 200px;
-      width: auto;
-      object-fit: contain;
-      transition: transform 0.6s var(--ease-out-expo);
-      filter: drop-shadow(0 8px 24px rgba(44, 31, 22, 0.15));
-    }
-    .product-card:hover .product-image img {
-      transform: scale(1.05) rotate(-1deg);
-    }
-    .product-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--gold);
-      color: var(--bamboo-deep);
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 3px;
-    }
-    .product-info {
-      padding: 28px 28px 32px;
-    }
-    .product-name {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--bamboo-deep);
-    }
-    .product-scale {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-bottom: 12px;
-      font-weight: 400;
-    }
-    .product-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
-    .product-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .product-price {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--bamboo-deep);
-    }
-    .product-price small {
-      font-size: 0.7rem;
-      font-weight: 400;
-      color: var(--text-light);
-      margin-left: 4px;
-    }
-    .btn-inquire {
-      padding: 10px 20px;
-      font-size: 0.78rem;
-      background: var(--bamboo-deep);
-      color: var(--cream);
-      border-radius: 4px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      transition: all 0.3s;
-    }
-    .btn-inquire:hover {
-      background: var(--bamboo-dark);
-      transform: translateY(-1px);
-    }
+    /* Collection */
+    .collection { padding: 120px 0; background: var(--cream); }
+    .collection-header { text-align: center; max-width: 600px; margin: 0 auto 64px; }
+    .collection-header p { font-size: 1rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .product-card { border-radius: 12px; overflow: hidden; background: var(--white); border: 1px solid rgba(44,31,22,0.06); transition: all 0.4s var(--ease-out-quart); }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(44,31,22,0.1); border-color: rgba(200,164,78,0.2); }
+    .product-image { position: relative; background: linear-gradient(135deg, var(--cream-dark), var(--cream)); padding: 40px 32px; display: flex; align-items: center; justify-content: center; min-height: 280px; overflow: hidden; }
+    .product-image img { max-height: 200px; width: auto; object-fit: contain; transition: transform 0.6s var(--ease-out-expo); filter: drop-shadow(0 8px 24px rgba(44,31,22,0.15)); }
+    .product-card:hover .product-image img { transform: scale(1.05) rotate(-1deg); }
+    .product-badge { position: absolute; top: 16px; right: 16px; background: var(--gold); color: var(--bamboo-deep); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 3px; }
+    .product-info { padding: 28px 28px 32px; }
+    .product-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; margin-bottom: 4px; color: var(--bamboo-deep); }
+    .product-scale { font-size: 0.8rem; color: var(--text-light); margin-bottom: 12px; }
+    .product-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; font-weight: 300; }
+    .product-meta { display: flex; justify-content: space-between; align-items: center; }
+    .product-price { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--bamboo-deep); }
+    .product-price small { font-size: 0.7rem; font-weight: 400; color: var(--text-light); margin-left: 4px; }
+    .btn-call { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; font-size: 0.78rem; background: var(--forest); color: var(--cream); border-radius: 4px; font-weight: 500; letter-spacing: 0.04em; transition: all 0.3s; }
+    .btn-call:hover { background: var(--forest-light); transform: translateY(-1px); }
+    .btn-call svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 
-    /* ═══ TESTIMONIAL / QUOTE ═══ */
-    .quote-section {
-      padding: 100px 0;
-      background: var(--cream-dark);
-      text-align: center;
-    }
-    .quote-icon {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 32px;
-      opacity: 0.3;
-    }
-    .quote-text {
-      font-family: var(--font-display);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.6;
-      color: var(--bamboo-deep);
-      max-width: 700px;
-      margin: 0 auto 24px;
-    }
-    .quote-attr {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      letter-spacing: 0.05em;
-    }
-    .quote-attr strong {
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
+    /* Quote */
+    .quote-section { padding: 100px 0; background: var(--cream-dark); text-align: center; }
+    .quote-icon { width: 48px; height: 48px; margin: 0 auto 32px; opacity: 0.3; }
+    .quote-text { font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 400; font-style: italic; line-height: 1.6; color: var(--bamboo-deep); max-width: 700px; margin: 0 auto 8px; }
+    .quote-text-hi { font-family: var(--font-hindi); font-size: clamp(1.1rem, 2vw, 1.4rem); color: var(--bamboo-warm); max-width: 700px; margin: 0 auto 24px; font-weight: 400; line-height: 1.8; }
+    .quote-attr { font-size: 0.85rem; color: var(--text-light); letter-spacing: 0.05em; }
+    .quote-attr strong { color: var(--text-secondary); font-weight: 500; }
 
-    /* ═══ CONTACT ═══ */
-    .contact {
-      padding: 120px 0;
-      background: var(--cream);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-    .contact-info h3 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-      color: var(--bamboo-deep);
-    }
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 28px;
-    }
-    .contact-item-icon {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--cream-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .contact-item-icon svg {
-      width: 18px;
-      height: 18px;
-      stroke: var(--bamboo-warm);
-      fill: none;
-      stroke-width: 1.5;
-    }
-    .contact-item-text {}
-    .contact-item-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 4px;
-    }
-    .contact-item-value {
-      font-size: 1rem;
-      color: var(--text-primary);
-      font-weight: 400;
-    }
-    .contact-item-value a {
-      color: var(--bamboo-warm);
-      transition: color 0.3s;
-    }
-    .contact-item-value a:hover { color: var(--gold); }
-    .contact-form {
-      background: var(--white);
-      padding: 48px;
-      border-radius: 12px;
-      border: 1px solid rgba(44, 31, 22, 0.06);
-    }
-    .contact-form h3 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .contact-form > p {
-      font-size: 0.88rem;
-      color: var(--text-light);
-      margin-bottom: 32px;
-    }
-    .form-group {
-      margin-bottom: 20px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--cream-dark);
-      border-radius: 6px;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      color: var(--text-primary);
-      background: var(--cream);
-      transition: border-color 0.3s, box-shadow 0.3s;
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(200, 164, 78, 0.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background: var(--bamboo-deep);
-      color: var(--cream);
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.06em;
-      border-radius: 6px;
-      transition: all 0.3s;
-      margin-top: 8px;
-    }
-    .btn-submit:hover {
-      background: var(--bamboo-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(44, 31, 22, 0.2);
-    }
+    /* Contact */
+    .contact { padding: 120px 0 100px; background: var(--cream); }
+    .contact-center { text-align: center; max-width: 700px; margin: 0 auto; }
+    .contact-center .section-label { justify-content: center; }
+    .contact-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 8px; font-weight: 300; }
+    .contact-desc-hi { font-family: var(--font-hindi); font-size: 1rem; color: var(--bamboo-warm); margin-bottom: 40px; font-weight: 400; }
+    .contact-phone-big { display: inline-flex; align-items: center; gap: 12px; background: var(--bamboo-deep); color: var(--cream); padding: 20px 48px; border-radius: 60px; font-size: 1.3rem; font-weight: 600; letter-spacing: 0.04em; transition: all 0.3s var(--ease-out-quart); margin-bottom: 32px; }
+    .contact-phone-big:hover { background: var(--bamboo-dark); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(44,31,22,0.25); }
+    .contact-phone-big svg { width: 24px; height: 24px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-extras { display: flex; justify-content: center; gap: 40px; margin-top: 32px; flex-wrap: wrap; }
+    .contact-extra { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.9rem; }
+    .contact-extra svg { width: 18px; height: 18px; stroke: var(--bamboo-warm); fill: none; stroke-width: 1.5; }
+    .contact-extra a { color: var(--bamboo-warm); transition: color 0.3s; }
+    .contact-extra a:hover { color: var(--gold); }
+    .contact-note { margin-top: 40px; padding: 24px 32px; background: var(--cream-dark); border-radius: 12px; border-left: 3px solid var(--gold); text-align: left; }
+    .contact-note p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; font-weight: 300; }
 
-    /* ═══ FOOTER ═══ */
-    .footer {
-      background: var(--bamboo-deep);
-      color: var(--bamboo-pale);
-      padding: 64px 0 32px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 48px;
-    }
-    .footer-brand {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .footer-desc {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--bamboo-light);
-      max-width: 320px;
-      font-weight: 300;
-    }
-    .footer h4 {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .footer-links {
-      list-style: none;
-    }
+    /* Footer */
+    .footer { background: var(--bamboo-deep); color: var(--bamboo-pale); padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+    .footer-brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .footer-by { font-size: 0.78rem; color: var(--gold); margin-bottom: 12px; letter-spacing: 0.05em; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.7; color: var(--bamboo-light); max-width: 320px; font-weight: 300; }
+    .footer h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .footer-links { list-style: none; }
     .footer-links li { margin-bottom: 10px; }
-    .footer-links a {
-      font-size: 0.88rem;
-      color: var(--bamboo-light);
-      transition: color 0.3s;
-      font-weight: 300;
-    }
+    .footer-links a { font-size: 0.88rem; color: var(--bamboo-light); transition: color 0.3s; font-weight: 300; }
     .footer-links a:hover { color: var(--gold-light); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--bamboo-light);
-    }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--bamboo-light); }
     .footer-bottom a { color: var(--gold); }
 
-    /* ═══ Decorative Wave Divider ═══ */
-    .wave-divider {
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-    }
-    .wave-divider svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* ═══ RESPONSIVE ═══ */
+    /* Responsive */
     @media (max-width: 960px) {
-      .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 140px;
-      }
-      .hero-tagline { justify-content: center; }
-      .hero-desc { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
-      .hero-flute { order: -1; }
-      .hero-flute-img { max-height: 300px; }
+      .hero-content { padding-top: 140px; }
       .story-grid { grid-template-columns: 1fr; gap: 48px; }
       .craft-steps { grid-template-columns: repeat(2, 1fr); }
       .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--cream);
-        padding: 24px;
-        gap: 20px;
-        border-bottom: 1px solid var(--cream-dark);
-      }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); padding: 24px; gap: 20px; border-bottom: 1px solid var(--cream-dark); }
+      .nav-links.open a { color: var(--text-secondary) !important; }
     }
     @media (max-width: 640px) {
       .hero-content { padding-top: 120px; }
       .hero-title { font-size: 2.2rem; }
+      .hero-phone { font-size: 0.95rem; padding: 14px 28px; }
       .craft-steps { grid-template-columns: 1fr; }
       .products-grid { grid-template-columns: 1fr; }
-      .contact-form { padding: 32px 24px; }
-      .form-row { grid-template-columns: 1fr; }
+      .contact-phone-big { font-size: 1.1rem; padding: 16px 32px; }
+      .contact-extras { flex-direction: column; align-items: center; gap: 16px; }
       .story-stats { gap: 24px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
 
-    /* ═══ Page Load Animation ═══ */
-    .hero-text > * {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: heroReveal 0.8s var(--ease-out-expo) forwards;
-    }
+    /* Hero animations */
+    .hero-content > * { opacity: 0; transform: translateY(30px); animation: heroReveal 0.8s var(--ease-out-expo) forwards; }
     .hero-tagline { animation-delay: 0.2s; }
     .hero-title { animation-delay: 0.4s; }
-    .hero-desc { animation-delay: 0.6s; }
-    .hero-actions { animation-delay: 0.8s; }
-    .hero-flute-img {
-      opacity: 0;
-      animation: heroFlute 1s 0.5s var(--ease-out-expo) forwards;
-    }
-    @keyframes heroReveal {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes heroFlute {
-      from { opacity: 0; transform: translateY(40px) rotate(-5deg); }
-      to { opacity: 1; transform: translateY(0) rotate(-2deg); }
-    }
-
-    /* Smooth image loading */
-    img[loading="lazy"] {
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
+    .hero-philosophy { animation-delay: 0.6s; }
+    .hero-philosophy-hi { animation-delay: 0.7s; }
+    .hero-cta-group { animation-delay: 0.8s; }
+    @keyframes heroReveal { to { opacity: 1; transform: translateY(0); } }
+    img[loading="lazy"] { opacity: 0; transition: opacity 0.4s; }
     img[loading="lazy"].loaded { opacity: 1; }
   </style>
 </head>
 <body>
 
-  <!-- ═══════════ NAVIGATION ═══════════ -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Rai Bansuri Home">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="20" cy="20" r="19" stroke="#C8A44E" stroke-width="1.5"/>
-          <path d="M12 28 C12 28 14 12 20 12 C26 12 28 28 28 28" stroke="#2C1F16" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="20" cy="16" r="1.5" fill="#C8A44E"/>
-          <circle cx="17.5" cy="20" r="1" fill="#C8A44E"/>
-          <circle cx="22.5" cy="20" r="1" fill="#C8A44E"/>
-          <circle cx="18" cy="24" r="1" fill="#C8A44E"/>
-          <circle cx="22" cy="24" r="1" fill="#C8A44E"/>
-          <line x1="16" y1="28" x2="24" y2="28" stroke="#2C1F16" stroke-width="1.5" stroke-linecap="round"/>
+          <circle class="logo-circle" cx="20" cy="20" r="19" stroke-width="1.5"/>
+          <path class="logo-body" d="M12 28 C12 28 14 12 20 12 C26 12 28 28 28 28" stroke-width="1.5" stroke-linecap="round"/>
+          <circle class="logo-dots" cx="20" cy="16" r="1.5"/>
+          <circle class="logo-dots" cx="17.5" cy="20" r="1"/>
+          <circle class="logo-dots" cx="22.5" cy="20" r="1"/>
+          <circle class="logo-dots" cx="18" cy="24" r="1"/>
+          <circle class="logo-dots" cx="22" cy="24" r="1"/>
+          <line class="logo-base" x1="16" y1="28" x2="24" y2="28" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <div class="nav-brand">
           Rai Bansuri
-          <span>Handcrafted Flutes</span>
+          <span>by Gaurab</span>
         </div>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#craft">The Craft</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#story"><span data-lang-en>Our Story</span><span data-lang-hi>&#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x0915;&#x0939;&#x093E;&#x0928;&#x0940;</span></a></li>
+          <li><a href="#craft"><span data-lang-en>The Craft</span><span data-lang-hi>&#x0936;&#x093F;&#x0932;&#x094D;&#x092A;</span></a></li>
+          <li><a href="#collection"><span data-lang-en>Collection</span><span data-lang-hi>&#x0938;&#x0902;&#x0917;&#x094D;&#x0930;&#x0939;</span></a></li>
+          <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-hi>&#x0938;&#x0902;&#x092A;&#x0930;&#x094D;&#x0915;</span></a></li>
+        </ul>
+        <div class="lang-toggle">
+          <button class="active" id="langEn" aria-label="English">EN</button>
+          <button id="langHi" aria-label="Hindi">&#x0939;&#x093F;&#x0902;</button>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ═══════════ HERO ═══════════ -->
   <section class="hero" id="hero">
     <div class="hero-bg">
       <picture>
@@ -995,30 +286,36 @@
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-tagline">Handcrafted in India</div>
-        <h1 class="hero-title">The Soul of <em>Bamboo,</em> Tuned to Perfection</h1>
-        <p class="hero-desc">Each Rai Bansuri is handcrafted from select Assam bamboo, shaped by tradition and tuned with precision — a flute that sings with the warmth of India.</p>
-        <div class="hero-actions">
-          <a href="#collection" class="btn btn-primary">Explore Collection</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      <div class="hero-tagline">
+        <span data-lang-en>Handcrafted in India</span>
+        <span data-lang-hi>&#x092D;&#x093E;&#x0930;&#x0924; &#x092E;&#x0947;&#x0902; &#x0939;&#x0938;&#x094D;&#x0924;&#x0928;&#x093F;&#x0930;&#x094D;&#x092E;&#x093F;&#x0924;</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-lang-en-block>The Soul of <em>Bamboo,</em> Tuned to Perfection</span>
+        <span data-lang-hi-block>&#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0940; <em>&#x0906;&#x0924;&#x094D;&#x092E;&#x093E;,</em> &#x0938;&#x0941;&#x0930; &#x092E;&#x0947;&#x0902; &#x092C;&#x0901;&#x0927;&#x0940;</span>
+      </h1>
+      <p class="hero-philosophy">
+        <span data-lang-en>A bansuri is deeply personal &#x2014; crafting yours starts with a conversation.</span>
+        <span data-lang-hi>&#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092C;&#x0939;&#x0941;&#x0924; &#x0928;&#x093F;&#x091C;&#x0940; &#x0939;&#x094B;&#x0924;&#x0940; &#x0939;&#x0948; &#x2014; &#x0906;&#x092A;&#x0915;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;, &#x090F;&#x0915; &#x092C;&#x093E;&#x0924;&#x091A;&#x0940;&#x0924; &#x0938;&#x0947; &#x092C;&#x0928;&#x0924;&#x0940; &#x0939;&#x0948;&#x0964;</span>
+      </p>
+      <p class="hero-philosophy-hi">
+        <span data-lang-en>&#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092C;&#x0939;&#x0941;&#x0924; &#x0928;&#x093F;&#x091C;&#x0940; &#x0939;&#x094B;&#x0924;&#x0940; &#x0939;&#x0948; &#x2014; &#x0906;&#x092A;&#x0915;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;, &#x090F;&#x0915; &#x092C;&#x093E;&#x0924;&#x091A;&#x0940;&#x0924; &#x0938;&#x0947; &#x092C;&#x0928;&#x0924;&#x0940; &#x0939;&#x0948;&#x0964;</span>
+        <span data-lang-hi>A bansuri is deeply personal &#x2014; crafting yours starts with a conversation.</span>
+      </p>
+      <div class="hero-cta-group">
+        <a href="tel:+919535519506" class="hero-phone">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 95355 19506
+        </a>
+        <div class="hero-sub-links">
+          <a href="#collection"><span data-lang-en>Explore Collection</span><span data-lang-hi>&#x0938;&#x0902;&#x0917;&#x094D;&#x0930;&#x0939; &#x0926;&#x0947;&#x0916;&#x0947;&#x0902;</span></a>
+          <a href="#story"><span data-lang-en>Our Story</span><span data-lang-hi>&#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x0915;&#x0939;&#x093E;&#x0928;&#x0940;</span></a>
         </div>
       </div>
-      <div class="hero-flute">
-        <div class="hero-glow"></div>
-        <picture>
-          <source srcset="assets/images/flute-1-nobg-hero.webp" type="image/webp">
-          <img src="assets/images/flute-1-nobg-hero.png" alt="Rai Bansuri handcrafted bamboo flute" class="hero-flute-img">
-        </picture>
-      </div>
     </div>
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
+    <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
   </section>
 
-  <!-- ═══════════ STORY ═══════════ -->
   <section class="story" id="story">
     <div class="container">
       <div class="story-grid">
@@ -1026,139 +323,120 @@
           <div class="story-accent"></div>
           <picture>
             <source srcset="assets/images/flute-2-hero.webp" type="image/webp">
-            <img src="assets/images/flute-2-hero.png" alt="Rai Bansuri bamboo flute craftsmanship" loading="lazy">
+            <img src="assets/images/flute-2-hero.png" alt="Rai Bansuri bamboo flute by Gaurab" loading="lazy">
           </picture>
         </div>
         <div class="story-text">
-          <div class="section-label reveal">Our Story</div>
-          <h2 class="section-title reveal reveal-delay-1">Crafted with <em>Passion,</em> Rooted in Tradition</h2>
-          <p class="reveal reveal-delay-2">Rai Bansuri is born from a deep reverence for the Indian bamboo flute — the Bansuri. Each instrument is carefully handcrafted by Gaurab, who brings together generations of knowledge with a meticulous ear for tonal perfection.</p>
-          <p class="reveal reveal-delay-3">From selecting the finest Assam bamboo to the final tuning of each note, every step is guided by an unwavering commitment to quality. Our flutes are not just instruments — they are vessels of Indian musical heritage.</p>
+          <div class="section-label reveal"><span data-lang-en>Our Story</span><span data-lang-hi>&#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x0915;&#x0939;&#x093E;&#x0928;&#x0940;</span></div>
+          <h2 class="section-title reveal reveal-delay-1">
+            <span data-lang-en-block>Crafted with <em>Passion,</em> Rooted in Tradition</span>
+            <span data-lang-hi-block>&#x091C;&#x0941;&#x0928;&#x0942;&#x0928; &#x0938;&#x0947; &#x092C;&#x0928;&#x0940;, <em>&#x092A;&#x0930;&#x0902;&#x092A;&#x0930;&#x093E;</em> &#x092E;&#x0947;&#x0902; &#x0930;&#x091A;&#x0940;</span>
+          </h2>
+          <div data-lang-en-block>
+            <p class="reveal reveal-delay-2">Rai Bansuri is born from a deep reverence for the Indian bamboo flute. Each instrument is carefully handcrafted by Gaurab, who brings together generations of knowledge with a meticulous ear for tonal perfection.</p>
+            <p class="reveal reveal-delay-3">From selecting the finest Assam bamboo to the final tuning of each note, every step is guided by an unwavering commitment to quality. Our flutes are not just instruments &#x2014; they are vessels of Indian musical heritage.</p>
+          </div>
+          <div data-lang-hi-block>
+            <p class="reveal reveal-delay-2">&#x0930;&#x093E;&#x092F; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;, &#x092D;&#x093E;&#x0930;&#x0924;&#x0940;&#x092F; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0915;&#x0947; &#x092A;&#x094D;&#x0930;&#x0924;&#x093F; &#x0917;&#x0939;&#x0930;&#x0947; &#x0938;&#x092E;&#x094D;&#x092E;&#x093E;&#x0928; &#x0938;&#x0947; &#x091C;&#x0928;&#x094D;&#x092E;&#x0940; &#x0939;&#x0948;&#x0964; &#x0939;&#x0930; &#x0935;&#x093E;&#x0926;&#x094D;&#x092F; &#x092F;&#x0902;&#x0924;&#x094D;&#x0930; &#x0917;&#x094C;&#x0930;&#x092C; &#x0926;&#x094D;&#x0935;&#x093E;&#x0930;&#x093E; &#x0938;&#x093E;&#x0935;&#x0927;&#x093E;&#x0928;&#x0940; &#x0938;&#x0947; &#x0939;&#x0938;&#x094D;&#x0924;&#x0928;&#x093F;&#x0930;&#x094D;&#x092E;&#x093F;&#x0924; &#x0915;&#x093F;&#x092F;&#x093E; &#x091C;&#x093E;&#x0924;&#x093E; &#x0939;&#x0948;&#x0964;</p>
+            <p class="reveal reveal-delay-3">&#x092C;&#x0947;&#x0939;&#x0924;&#x0930;&#x0940;&#x0928; &#x0905;&#x0938;&#x092E; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0947; &#x091A;&#x092F;&#x0928; &#x0938;&#x0947; &#x0932;&#x0947;&#x0915;&#x0930; &#x0939;&#x0930; &#x0938;&#x0941;&#x0930; &#x0915;&#x0940; &#x0905;&#x0902;&#x0924;&#x093F;&#x092E; &#x091F;&#x094D;&#x092F;&#x0942;&#x0928;&#x093F;&#x0902;&#x0917; &#x0924;&#x0915; &#x2014; &#x0939;&#x0930; &#x0915;&#x0926;&#x092E; &#x0917;&#x0941;&#x0923;&#x0935;&#x0924;&#x094D;&#x0924;&#x093E; &#x0915;&#x0947; &#x092A;&#x094D;&#x0930;&#x0924;&#x093F; &#x0905;&#x091F;&#x0942;&#x091F; &#x092A;&#x094D;&#x0930;&#x0924;&#x093F;&#x092C;&#x0926;&#x094D;&#x0927;&#x0924;&#x093E; &#x0938;&#x0947; &#x0928;&#x093F;&#x0930;&#x094D;&#x0926;&#x0947;&#x0936;&#x093F;&#x0924; &#x0939;&#x0948;&#x0964;</p>
+          </div>
           <div class="story-stats reveal reveal-delay-4">
-            <div class="stat-item">
-              <div class="stat-number">100%</div>
-              <div class="stat-label">Handcrafted</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">Assam</div>
-              <div class="stat-label">Premium Bamboo</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">A=440</div>
-              <div class="stat-label">Concert Tuned</div>
-            </div>
+            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label"><span data-lang-en>Handcrafted</span><span data-lang-hi>&#x0939;&#x0938;&#x094D;&#x0924;&#x0928;&#x093F;&#x0930;&#x094D;&#x092E;&#x093F;&#x0924;</span></div></div>
+            <div class="stat-item"><div class="stat-number"><span data-lang-en>Assam</span><span data-lang-hi>&#x0905;&#x0938;&#x092E;</span></div><div class="stat-label"><span data-lang-en>Premium Bamboo</span><span data-lang-hi>&#x0909;&#x0924;&#x094D;&#x0915;&#x0943;&#x0937;&#x094D;&#x091F; &#x092C;&#x093E;&#x0901;&#x0938;</span></div></div>
+            <div class="stat-item"><div class="stat-number">A=440</div><div class="stat-label"><span data-lang-en>Concert Tuned</span><span data-lang-hi>&#x0915;&#x0949;&#x0928;&#x094D;&#x0938;&#x0930;&#x094D;&#x091F; &#x091F;&#x094D;&#x092F;&#x0942;&#x0928;&#x094D;&#x0921;</span></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ CRAFT PROCESS ═══════════ -->
   <section class="craft" id="craft">
     <div class="container">
       <div style="text-align:center; max-width:600px; margin:0 auto 16px;">
-        <div class="section-label reveal" style="justify-content:center;">The Craft</div>
-        <h2 class="section-title reveal reveal-delay-1">From Bamboo Grove to <em>Musical Soul</em></h2>
+        <div class="section-label reveal" style="justify-content:center;"><span data-lang-en>The Craft</span><span data-lang-hi>&#x0936;&#x093F;&#x0932;&#x094D;&#x092A;</span></div>
+        <h2 class="section-title reveal reveal-delay-1">
+          <span data-lang-en-block>From Bamboo Grove to <em>Musical Soul</em></span>
+          <span data-lang-hi-block>&#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0947; &#x0935;&#x0928; &#x0938;&#x0947; <em>&#x0938;&#x0902;&#x0917;&#x0940;&#x0924; &#x0915;&#x0940; &#x0906;&#x0924;&#x094D;&#x092E;&#x093E;</em> &#x0924;&#x0915;</span>
+        </h2>
       </div>
       <div class="craft-steps">
         <div class="craft-step reveal">
           <div class="craft-num">01</div>
-          <div class="craft-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </div>
-          <h3>Selection</h3>
-          <p>Hand-picking mature Assam bamboo with the ideal density, grain, and resonance for superior tonal quality.</p>
+          <div class="craft-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <h3><span data-lang-en>Selection</span><span data-lang-hi>&#x091A;&#x092F;&#x0928;</span></h3>
+          <p><span data-lang-en>Hand-picking mature Assam bamboo with the ideal density, grain, and resonance for superior tonal quality.</span><span data-lang-hi>&#x0909;&#x0924;&#x094D;&#x0915;&#x0943;&#x0937;&#x094D;&#x091F; &#x0938;&#x094D;&#x0935;&#x0930; &#x0917;&#x0941;&#x0923;&#x0935;&#x0924;&#x094D;&#x0924;&#x093E; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0906;&#x0926;&#x0930;&#x094D;&#x0936; &#x0918;&#x0928;&#x0924;&#x094D;&#x0935; &#x0935;&#x093E;&#x0932;&#x0947; &#x092A;&#x0930;&#x093F;&#x092A;&#x0915;&#x094D;&#x0935; &#x0905;&#x0938;&#x092E; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x093E; &#x0939;&#x0938;&#x094D;&#x0924;-&#x091A;&#x092F;&#x0928;&#x0964;</span></p>
         </div>
         <div class="craft-step reveal reveal-delay-1">
           <div class="craft-num">02</div>
-          <div class="craft-icon">
-            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3>Shaping</h3>
-          <p>Carefully boring, shaping, and smoothing the bamboo shaft to achieve the perfect internal diameter and airflow.</p>
+          <div class="craft-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3><span data-lang-en>Shaping</span><span data-lang-hi>&#x0906;&#x0915;&#x093E;&#x0930;</span></h3>
+          <p><span data-lang-en>Carefully boring, shaping, and smoothing the bamboo shaft to achieve the perfect internal diameter and airflow.</span><span data-lang-hi>&#x0938;&#x0939;&#x0940; &#x0906;&#x0902;&#x0924;&#x0930;&#x093F;&#x0915; &#x0935;&#x094D;&#x092F;&#x093E;&#x0938; &#x0914;&#x0930; &#x0935;&#x093E;&#x092F;&#x0941; &#x092A;&#x094D;&#x0930;&#x0935;&#x093E;&#x0939; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0940; &#x0928;&#x0932;&#x0940; &#x0915;&#x094B; &#x0938;&#x093E;&#x0935;&#x0927;&#x093E;&#x0928;&#x0940; &#x0938;&#x0947; &#x0924;&#x0930;&#x093E;&#x0936;&#x0928;&#x093E;&#x0964;</span></p>
         </div>
         <div class="craft-step reveal reveal-delay-2">
           <div class="craft-num">03</div>
-          <div class="craft-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-          </div>
-          <h3>Tuning</h3>
-          <p>Precision hole placement and fine-tuning each note to concert pitch (A=440Hz) with chromatic accuracy.</p>
+          <div class="craft-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+          <h3><span data-lang-en>Tuning</span><span data-lang-hi>&#x0938;&#x094D;&#x0935;&#x0930;</span></h3>
+          <p><span data-lang-en>Precision hole placement and fine-tuning each note to concert pitch (A=440Hz) with chromatic accuracy.</span><span data-lang-hi>&#x0915;&#x0949;&#x0928;&#x094D;&#x0938;&#x0930;&#x094D;&#x091F; &#x092A;&#x093F;&#x091A; (A=440Hz) &#x092A;&#x0930; &#x0939;&#x0930; &#x0938;&#x0941;&#x0930; &#x0915;&#x0940; &#x0938;&#x091F;&#x0940;&#x0915; &#x091F;&#x094D;&#x092F;&#x0942;&#x0928;&#x093F;&#x0902;&#x0917;&#x0964;</span></p>
         </div>
         <div class="craft-step reveal reveal-delay-3">
           <div class="craft-num">04</div>
-          <div class="craft-icon">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3>Finishing</h3>
-          <p>Thread binding, natural oil treatment, and engraving the Rai Bansuri mark — ready to sing.</p>
+          <div class="craft-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3><span data-lang-en>Finishing</span><span data-lang-hi>&#x0905;&#x0902;&#x0924;&#x093F;&#x092E; &#x0930;&#x0942;&#x092A;</span></h3>
+          <p><span data-lang-en>Thread binding, natural oil treatment, and engraving the Rai Bansuri mark &#x2014; ready to sing.</span><span data-lang-hi>&#x0927;&#x093E;&#x0917;&#x0947; &#x0915;&#x0940; &#x092C;&#x0902;&#x0927;&#x093E;&#x0908;, &#x092A;&#x094D;&#x0930;&#x093E;&#x0915;&#x0943;&#x0924;&#x093F;&#x0915; &#x0924;&#x0947;&#x0932; &#x0909;&#x092A;&#x091A;&#x093E;&#x0930;, &#x0914;&#x0930; &#x0930;&#x093E;&#x092F; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0915;&#x093E; &#x091A;&#x093F;&#x0939;&#x094D;&#x0928; &#x2014; &#x0917;&#x093E;&#x0928;&#x0947; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0924;&#x0948;&#x092F;&#x093E;&#x0930;&#x0964;</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ COLLECTION ═══════════ -->
   <section class="collection" id="collection">
     <div class="container">
       <div class="collection-header">
-        <div class="section-label reveal" style="justify-content:center;">Collection</div>
-        <h2 class="section-title reveal reveal-delay-1">Our <em>Bansuris</em></h2>
-        <p class="reveal reveal-delay-2">Each flute is unique, handcrafted with care. Browse our collection and reach out to find your perfect Bansuri.</p>
+        <div class="section-label reveal" style="justify-content:center;"><span data-lang-en>Collection</span><span data-lang-hi>&#x0938;&#x0902;&#x0917;&#x094D;&#x0930;&#x0939;</span></div>
+        <h2 class="section-title reveal reveal-delay-1"><span data-lang-en-block>Our <em>Bansuris</em></span><span data-lang-hi-block>&#x0939;&#x092E;&#x093E;&#x0930;&#x0940; <em>&#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x093F;&#x092F;&#x093E;&#x0901;</em></span></h2>
+        <p class="reveal reveal-delay-2"><span data-lang-en>Each flute is unique, handcrafted with care. Browse our collection and call to find your perfect Bansuri.</span><span data-lang-hi>&#x0939;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0905;&#x0928;&#x0942;&#x0920;&#x0940; &#x0939;&#x0948;&#x0964; &#x0905;&#x092A;&#x0928;&#x0940; &#x0938;&#x0939;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0916;&#x094B;&#x091C;&#x0928;&#x0947; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0939;&#x092E;&#x0947;&#x0902; &#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;&#x0964;</span></p>
       </div>
       <div class="products-grid">
-        <!-- Product 1 -->
         <div class="product-card reveal">
           <div class="product-image">
-            <span class="product-badge">Popular</span>
-            <picture>
-              <source srcset="assets/images/flute-1-nobg-card.webp" type="image/webp">
-              <img src="assets/images/flute-1-nobg-hero.png" alt="Rai Bansuri Concert Scale Flute" loading="lazy">
-            </picture>
+            <span class="product-badge"><span data-lang-en>Popular</span><span data-lang-hi>&#x0932;&#x094B;&#x0915;&#x092A;&#x094D;&#x0930;&#x093F;&#x092F;</span></span>
+            <picture><source srcset="assets/images/flute-1-nobg-card.webp" type="image/webp"><img src="assets/images/flute-1-nobg-hero.png" alt="Rai Bansuri Concert Scale Flute by Gaurab" loading="lazy"></picture>
           </div>
           <div class="product-info">
-            <h3 class="product-name">Concert Scale Bansuri</h3>
-            <div class="product-scale">Key of E • Bass • 30"</div>
-            <p class="product-desc">Rich, deep tones ideal for classical ragas and meditative playing. Our flagship concert-grade Bansuri.</p>
+            <h3 class="product-name"><span data-lang-en>Concert Scale Bansuri</span><span data-lang-hi>&#x0915;&#x0949;&#x0928;&#x094D;&#x0938;&#x0930;&#x094D;&#x091F; &#x0938;&#x094D;&#x0915;&#x0947;&#x0932; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;</span></h3>
+            <div class="product-scale">Key of E &#x2022; Bass &#x2022; 30"</div>
+            <p class="product-desc"><span data-lang-en>Rich, deep tones ideal for classical ragas and meditative playing. Our flagship concert-grade Bansuri.</span><span data-lang-hi>&#x0936;&#x093E;&#x0938;&#x094D;&#x0924;&#x094D;&#x0930;&#x0940;&#x092F; &#x0930;&#x093E;&#x0917;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0917;&#x0939;&#x0930;&#x0947;, &#x0938;&#x092E;&#x0943;&#x0926;&#x094D;&#x0927; &#x0938;&#x094D;&#x0935;&#x0930;&#x0964; &#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x092A;&#x094D;&#x0930;&#x092E;&#x0941;&#x0916; &#x0915;&#x0949;&#x0928;&#x094D;&#x0938;&#x0930;&#x094D;&#x091F;-&#x0917;&#x094D;&#x0930;&#x0947;&#x0921; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">₹3,500 <small>onwards</small></div>
-              <a href="#contact" class="btn-inquire">Inquire</a>
+              <div class="product-price">&#x20B9;3,500 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
         </div>
-        <!-- Product 2 -->
         <div class="product-card reveal reveal-delay-1">
           <div class="product-image">
-            <picture>
-              <source srcset="assets/images/flute-2-nobg-card.webp" type="image/webp">
-              <img src="assets/images/flute-2-nobg-hero.png" alt="Rai Bansuri Medium Scale Flute" loading="lazy">
-            </picture>
+            <picture><source srcset="assets/images/flute-2-nobg-card.webp" type="image/webp"><img src="assets/images/flute-2-nobg-hero.png" alt="Rai Bansuri Medium Scale Flute by Gaurab" loading="lazy"></picture>
           </div>
           <div class="product-info">
-            <h3 class="product-name">Medium Scale Bansuri</h3>
-            <div class="product-scale">Key of G • Medium • 23"</div>
-            <p class="product-desc">Versatile and expressive. Perfect for both beginners and seasoned players seeking a warm, clear voice.</p>
+            <h3 class="product-name"><span data-lang-en>Medium Scale Bansuri</span><span data-lang-hi>&#x092E;&#x0927;&#x094D;&#x092F;&#x092E; &#x0938;&#x094D;&#x0915;&#x0947;&#x0932; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;</span></h3>
+            <div class="product-scale">Key of G &#x2022; Medium &#x2022; 23"</div>
+            <p class="product-desc"><span data-lang-en>Versatile and expressive. Perfect for both beginners and seasoned players seeking a warm, clear voice.</span><span data-lang-hi>&#x092C;&#x0939;&#x0941;&#x092E;&#x0941;&#x0916;&#x0940; &#x0914;&#x0930; &#x092D;&#x093E;&#x0935;&#x092A;&#x0942;&#x0930;&#x094D;&#x0923;&#x0964; &#x0936;&#x0941;&#x0930;&#x0941;&#x0906;&#x0924;&#x0940; &#x0914;&#x0930; &#x0905;&#x0928;&#x0941;&#x092D;&#x0935;&#x0940; &#x0926;&#x094B;&#x0928;&#x094B;&#x0902; &#x0935;&#x093E;&#x0926;&#x0915;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">₹2,500 <small>onwards</small></div>
-              <a href="#contact" class="btn-inquire">Inquire</a>
+              <div class="product-price">&#x20B9;2,500 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
         </div>
-        <!-- Product 3 -->
         <div class="product-card reveal reveal-delay-2">
           <div class="product-image">
-            <span class="product-badge">New</span>
-            <picture>
-              <source srcset="assets/images/flute-3-nobg-card.webp" type="image/webp">
-              <img src="assets/images/flute-3-nobg-hero.png" alt="Rai Bansuri Small Scale Flute" loading="lazy">
-            </picture>
+            <span class="product-badge"><span data-lang-en>New</span><span data-lang-hi>&#x0928;&#x092F;&#x093E;</span></span>
+            <picture><source srcset="assets/images/flute-3-nobg-card.webp" type="image/webp"><img src="assets/images/flute-3-nobg-hero.png" alt="Rai Bansuri Small Scale Flute by Gaurab" loading="lazy"></picture>
           </div>
           <div class="product-info">
-            <h3 class="product-name">Small Scale Bansuri</h3>
-            <div class="product-scale">Key of C • Treble • 17"</div>
-            <p class="product-desc">Bright and lively. Ideal for folk melodies, light classical, and students beginning their Bansuri journey.</p>
+            <h3 class="product-name"><span data-lang-en>Small Scale Bansuri</span><span data-lang-hi>&#x091B;&#x094B;&#x091F;&#x0940; &#x0938;&#x094D;&#x0915;&#x0947;&#x0932; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;</span></h3>
+            <div class="product-scale">Key of C &#x2022; Treble &#x2022; 17"</div>
+            <p class="product-desc"><span data-lang-en>Bright and lively. Ideal for folk melodies, light classical, and students beginning their Bansuri journey.</span><span data-lang-hi>&#x0909;&#x091C;&#x094D;&#x091C;&#x094D;&#x0935;&#x0932; &#x0914;&#x0930; &#x091C;&#x0940;&#x0935;&#x0902;&#x0924;&#x0964; &#x0932;&#x094B;&#x0915; &#x0927;&#x0941;&#x0928;&#x094B;&#x0902; &#x0914;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092F;&#x093E;&#x0924;&#x094D;&#x0930;&#x093E; &#x0936;&#x0941;&#x0930;&#x0942; &#x0915;&#x0930;&#x0928;&#x0947; &#x0935;&#x093E;&#x0932;&#x094B;&#x0902; &#x0915;&#x0947; &#x0932;&#x093F;&#x090F;&#x0964;</span></p>
             <div class="product-meta">
-              <div class="product-price">₹1,800 <small>onwards</small></div>
-              <a href="#contact" class="btn-inquire">Inquire</a>
+              <div class="product-price">&#x20B9;1,800 <small><span data-lang-en>onwards</span><span data-lang-hi>&#x0938;&#x0947;</span></small></div>
+              <a href="tel:+919535519506" class="btn-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span data-lang-en>Call Now</span><span data-lang-hi>&#x0915;&#x0949;&#x0932; &#x0915;&#x0930;&#x0947;&#x0902;</span></a>
             </div>
           </div>
         </div>
@@ -1166,7 +444,6 @@
     </div>
   </section>
 
-  <!-- ═══════════ QUOTE ═══════════ -->
   <section class="quote-section">
     <div class="container">
       <div class="reveal">
@@ -1175,108 +452,78 @@
           <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
         </svg>
       </div>
-      <blockquote class="quote-text reveal reveal-delay-1">"The Bansuri is not merely an instrument — it is the breath of the player given voice through bamboo. Each flute carries within it the song of the earth."</blockquote>
-      <div class="quote-attr reveal reveal-delay-2"><strong>Gaurab</strong> — Founder, Rai Bansuri</div>
+      <blockquote class="quote-text reveal reveal-delay-1">
+        <span data-lang-en>&#x201C;The Bansuri is not merely an instrument &#x2014; it is the breath of the player given voice through bamboo. Each flute carries within it the song of the earth.&#x201D;</span>
+        <span data-lang-hi>&#x201C;&#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0915;&#x0947;&#x0935;&#x0932; &#x090F;&#x0915; &#x0935;&#x093E;&#x0926;&#x094D;&#x092F; &#x092F;&#x0902;&#x0924;&#x094D;&#x0930; &#x0928;&#x0939;&#x0940;&#x0902; &#x0939;&#x0948; &#x2014; &#x092F;&#x0939; &#x0935;&#x093E;&#x0926;&#x0915; &#x0915;&#x0940; &#x0938;&#x093E;&#x0901;&#x0938; &#x0939;&#x0948; &#x091C;&#x094B; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0947; &#x092E;&#x093E;&#x0927;&#x094D;&#x092F;&#x092E; &#x0938;&#x0947; &#x0906;&#x0935;&#x093E;&#x091C;&#x093C; &#x092A;&#x093E;&#x0924;&#x0940; &#x0939;&#x0948;&#x0964;&#x201D;</span>
+      </blockquote>
+      <div class="quote-text-hi reveal reveal-delay-1">
+        <span data-lang-en>&#x0939;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092E;&#x0947;&#x0902; &#x0927;&#x0930;&#x0924;&#x0940; &#x0915;&#x093E; &#x0917;&#x0940;&#x0924; &#x092C;&#x0938;&#x093E; &#x0939;&#x0948;&#x0964;</span>
+        <span data-lang-hi>Each flute carries within it the song of the earth.</span>
+      </div>
+      <div class="quote-attr reveal reveal-delay-2"><strong>Gaurab</strong> &#x2014; <span data-lang-en>Founder, Rai Bansuri</span><span data-lang-hi>&#x0938;&#x0902;&#x0938;&#x094D;&#x0925;&#x093E;&#x092A;&#x0915;, &#x0930;&#x093E;&#x092F; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;</span></div>
     </div>
   </section>
 
-  <!-- ═══════════ CONTACT ═══════════ -->
   <section class="contact" id="contact">
     <div class="container">
-      <div class="contact-grid">
-        <div>
-          <div class="section-label reveal">Get in Touch</div>
-          <h2 class="section-title reveal reveal-delay-1">Let's Find Your <em>Perfect Bansuri</em></h2>
-          <p class="reveal reveal-delay-2" style="font-size:1rem; color:var(--text-secondary); line-height:1.8; margin-bottom:40px; font-weight:300;">
-            Every player is unique, and so is every Bansuri. Reach out to discuss your playing style, preferred scale, and let us craft or recommend the perfect flute for you.
-          </p>
-          <div class="contact-info reveal reveal-delay-3">
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Call or WhatsApp</div>
-                <div class="contact-item-value"><a href="tel:+919876543210">+91 98765 43210</a></div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value"><a href="mailto:hello@ryebansuri.in">hello@ryebansuri.in</a></div>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-item-icon">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div class="contact-item-text">
-                <div class="contact-item-label">Location</div>
-                <div class="contact-item-value">India</div>
-              </div>
-            </div>
+      <div class="contact-center">
+        <div class="section-label reveal"><span data-lang-en>Get in Touch</span><span data-lang-hi>&#x0938;&#x0902;&#x092A;&#x0930;&#x094D;&#x0915; &#x0915;&#x0930;&#x0947;&#x0902;</span></div>
+        <h2 class="section-title reveal reveal-delay-1">
+          <span data-lang-en-block>Let&#x2019;s Find Your <em>Perfect Bansuri</em></span>
+          <span data-lang-hi-block>&#x0906;&#x0907;&#x090F; &#x0906;&#x092A;&#x0915;&#x0940; <em>&#x0938;&#x0939;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;</em> &#x0916;&#x094B;&#x091C;&#x0947;&#x0902;</span>
+        </h2>
+        <p class="contact-desc reveal reveal-delay-2">
+          <span data-lang-en>Every Bansuri is personal. Tell us about your playing style, preferred scale, and we&#x2019;ll craft or recommend the perfect flute for you.</span>
+          <span data-lang-hi>&#x0939;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0928;&#x093F;&#x091C;&#x0940; &#x0939;&#x094B;&#x0924;&#x0940; &#x0939;&#x0948;&#x0964; &#x0905;&#x092A;&#x0928;&#x0940; &#x0935;&#x093E;&#x0926;&#x0928; &#x0936;&#x0948;&#x0932;&#x0940; &#x0914;&#x0930; &#x092A;&#x0938;&#x0902;&#x0926;&#x0940;&#x0926;&#x093E; &#x0938;&#x094D;&#x0915;&#x0947;&#x0932; &#x092C;&#x0924;&#x093E;&#x0907;&#x090F;, &#x0939;&#x092E; &#x0906;&#x092A;&#x0915;&#x0947; &#x0932;&#x093F;&#x090F; &#x0938;&#x0939;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x092C;&#x0928;&#x093E;&#x090F;&#x0901;&#x0917;&#x0947;&#x0964;</span>
+        </p>
+        <p class="contact-desc-hi reveal reveal-delay-2">
+          <span data-lang-en>&#x0939;&#x0930; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0928;&#x093F;&#x091C;&#x0940; &#x0939;&#x094B;&#x0924;&#x0940; &#x0939;&#x0948; &#x2014; &#x092C;&#x0938; &#x090F;&#x0915; &#x0915;&#x0949;&#x0932; &#x0938;&#x0947; &#x0936;&#x0941;&#x0930;&#x0942; &#x0915;&#x0930;&#x0947;&#x0902;&#x0964;</span>
+          <span data-lang-hi>Every bansuri is personal &#x2014; just start with a call.</span>
+        </p>
+        <div class="reveal reveal-delay-3">
+          <a href="tel:+919535519506" class="contact-phone-big">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 95355 19506
+          </a>
+        </div>
+        <div class="contact-extras reveal reveal-delay-4">
+          <div class="contact-extra">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:hello@ryebansuri.in">hello@ryebansuri.in</a>
+          </div>
+          <div class="contact-extra">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span data-lang-en>India</span><span data-lang-hi>&#x092D;&#x093E;&#x0930;&#x0924;</span>
           </div>
         </div>
-        <div class="contact-form reveal reveal-delay-2">
-          <h3>Send an Inquiry</h3>
-          <p>We'll get back to you within 24 hours.</p>
-          <form id="inquiryForm" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Full name" required>
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone / WhatsApp</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="interest">Interested In</label>
-              <select id="interest" name="interest">
-                <option value="">Select a flute type...</option>
-                <option value="concert">Concert Scale Bansuri (Bass)</option>
-                <option value="medium">Medium Scale Bansuri</option>
-                <option value="small">Small Scale Bansuri (Treble)</option>
-                <option value="custom">Custom Order</option>
-                <option value="other">Other / General Inquiry</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us about your playing experience, preferred key, or any questions..."></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Inquiry</button>
-          </form>
+        <div class="contact-note reveal reveal-delay-4">
+          <p><span data-lang-en>&#x1F4A1; <strong>Why call?</strong> Because a bansuri is personal. A quick conversation helps us understand your playing level, musical preferences, and the voice you&#x2019;re seeking &#x2014; so we can craft or recommend exactly the right flute.</span><span data-lang-hi>&#x1F4A1; <strong>&#x0915;&#x0949;&#x0932; &#x0915;&#x094D;&#x092F;&#x094B;&#x0902;?</strong> &#x0915;&#x094D;&#x092F;&#x094B;&#x0902;&#x0915;&#x093F; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940; &#x0928;&#x093F;&#x091C;&#x0940; &#x0939;&#x0948;&#x0964; &#x090F;&#x0915; &#x091B;&#x094B;&#x091F;&#x0940; &#x092C;&#x093E;&#x0924;&#x091A;&#x0940;&#x0924; &#x0938;&#x0947; &#x0939;&#x092E; &#x0906;&#x092A;&#x0915;&#x0947; &#x0935;&#x093E;&#x0926;&#x0928; &#x0938;&#x094D;&#x0924;&#x0930; &#x0914;&#x0930; &#x0938;&#x0902;&#x0917;&#x0940;&#x0924; &#x092A;&#x0938;&#x0902;&#x0926; &#x0938;&#x092E;&#x091D; &#x0938;&#x0915;&#x0924;&#x0947; &#x0939;&#x0948;&#x0902;&#x0964;</span></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ FOOTER ═══════════ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand">Rai Bansuri</div>
-          <p class="footer-desc">Handcrafted Indian bamboo flutes, made with love and tradition. Each Bansuri is a unique work of art, tuned to perfection.</p>
+          <div class="footer-by">by Gaurab</div>
+          <p class="footer-desc"><span data-lang-en>Handcrafted Indian bamboo flutes, made with love and tradition. Each Bansuri is a unique work of art, tuned to perfection.</span><span data-lang-hi>&#x092A;&#x094D;&#x0930;&#x0947;&#x092E; &#x0914;&#x0930; &#x092A;&#x0930;&#x0902;&#x092A;&#x0930;&#x093E; &#x0938;&#x0947; &#x092C;&#x0928;&#x0940; &#x0939;&#x0938;&#x094D;&#x0924;&#x0928;&#x093F;&#x0930;&#x094D;&#x092E;&#x093F;&#x0924; &#x092D;&#x093E;&#x0930;&#x0924;&#x0940;&#x092F; &#x092C;&#x093E;&#x0901;&#x0938; &#x0915;&#x0940; &#x092C;&#x093E;&#x0901;&#x0938;&#x0941;&#x0930;&#x0940;&#x0964;</span></p>
         </div>
         <div>
-          <h4>Navigate</h4>
+          <h4><span data-lang-en>Navigate</span><span data-lang-hi>&#x0928;&#x0947;&#x0935;&#x093F;&#x0917;&#x0947;&#x091F;</span></h4>
           <ul class="footer-links">
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#craft">The Craft</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#story"><span data-lang-en>Our Story</span><span data-lang-hi>&#x0939;&#x092E;&#x093E;&#x0930;&#x0940; &#x0915;&#x0939;&#x093E;&#x0928;&#x0940;</span></a></li>
+            <li><a href="#craft"><span data-lang-en>The Craft</span><span data-lang-hi>&#x0936;&#x093F;&#x0932;&#x094D;&#x092A;</span></a></li>
+            <li><a href="#collection"><span data-lang-en>Collection</span><span data-lang-hi>&#x0938;&#x0902;&#x0917;&#x094D;&#x0930;&#x0939;</span></a></li>
+            <li><a href="#contact"><span data-lang-en>Contact</span><span data-lang-hi>&#x0938;&#x0902;&#x092A;&#x0930;&#x094D;&#x0915;</span></a></li>
           </ul>
         </div>
         <div>
-          <h4>Connect</h4>
+          <h4><span data-lang-en>Connect</span><span data-lang-hi>&#x091C;&#x0941;&#x0921;&#x093C;&#x0947;&#x0902;</span></h4>
           <ul class="footer-links">
-            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="tel:+919535519506">+91 95355 19506</a></li>
             <li><a href="mailto:hello@ryebansuri.in">hello@ryebansuri.in</a></li>
             <li><a href="https://instagram.com/raibansuri" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://youtube.com/@raibansuri" target="_blank" rel="noopener">YouTube</a></li>
@@ -1284,90 +531,50 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2025 Rai Bansuri. Handcrafted with ♥ in India.</span>
+        <span>&#x00A9; 2026 Rai Bansuri by Gaurab. <span data-lang-en>Handcrafted with</span><span data-lang-hi>&#x092A;&#x094D;&#x0930;&#x0947;&#x092E; &#x0938;&#x0947; &#x092C;&#x0928;&#x0940;</span> &#x2665; <span data-lang-en>in India.</span><span data-lang-hi>&#x092D;&#x093E;&#x0930;&#x0924; &#x092E;&#x0947;&#x0902;&#x0964;</span></span>
         <span><a href="https://ryebansuri.in">ryebansuri.in</a></span>
       </div>
     </div>
   </footer>
 
-  <!-- ═══════════ SCRIPTS ═══════════ -->
   <script>
-    // ── Nav scroll effect ──
     const nav = document.getElementById('nav');
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); }, { passive: true });
+    navToggle.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+    navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => navLinks.classList.remove('open')); });
 
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+    document.getElementById('langEn').addEventListener('click', () => {
+      document.body.classList.remove('lang-hi');
+      document.getElementById('langEn').classList.add('active');
+      document.getElementById('langHi').classList.remove('active');
+      document.documentElement.lang = 'en';
+    });
+    document.getElementById('langHi').addEventListener('click', () => {
+      document.body.classList.add('lang-hi');
+      document.getElementById('langHi').classList.add('active');
+      document.getElementById('langEn').classList.remove('active');
+      document.documentElement.lang = 'hi';
     });
 
-    // Close mobile nav on link click
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // ── Scroll Reveal (lightweight IntersectionObserver) ──
-    const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // ── Lazy image loading ──
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
-      if (img.complete) {
-        img.classList.add('loaded');
-      } else {
-        img.addEventListener('load', () => img.classList.add('loaded'));
-      }
+      if (img.complete) img.classList.add('loaded');
+      else img.addEventListener('load', () => img.classList.add('loaded'));
     });
 
-    // ── Smooth scroll for anchor links ──
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          const offset = 80;
-          const position = target.getBoundingClientRect().top + window.scrollY - offset;
-          window.scrollTo({ top: position, behavior: 'smooth' });
-        }
+        if (target) { window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
       });
     });
-
-    // ── Form handling ──
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('.btn-submit');
-      const originalText = btn.textContent;
-
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      // Simulate sending (replace with actual form endpoint)
-      setTimeout(() => {
-        btn.textContent = '✓ Inquiry Sent!';
-        btn.style.background = '#2D4A3E';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 3000);
-      }, 1000);
-    }
   </script>
-
 </body>
 </html>
