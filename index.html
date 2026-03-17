@@ -163,6 +163,9 @@
     .btn-call { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; font-size: 0.78rem; background: var(--forest); color: var(--cream); border-radius: 4px; font-weight: 500; letter-spacing: 0.04em; transition: all 0.3s; }
     .btn-call:hover { background: var(--forest-light); transform: translateY(-1px); }
     .btn-call svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+    .delivery-notice { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 48px; padding: 16px 24px; background: var(--cream-dark); border-radius: 8px; border: 1px solid rgba(200,164,78,0.2); }
+    .delivery-notice svg { width: 20px; height: 20px; stroke: var(--bamboo-warm); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .delivery-notice p { font-size: 0.9rem; color: var(--text-secondary); font-weight: 400; }
 
     /* Quote */
     .quote-section { padding: 100px 0; background: var(--cream-dark); text-align: center; }
@@ -594,6 +597,10 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="delivery-notice reveal">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <p><span data-lang-en>Delivery in 15 days after order</span><span data-lang-hi>&#x0911;&#x0930;&#x094D;&#x0921;&#x0930; &#x0915;&#x0947; &#x092C;&#x093E;&#x0926; 15 &#x0926;&#x093F;&#x0928;&#x094B;&#x0902; &#x092E;&#x0947;&#x0902; &#x0921;&#x093F;&#x0932;&#x0940;&#x0935;&#x0930;&#x0940;</span></p>
       </div>
     </div>
   </section>
